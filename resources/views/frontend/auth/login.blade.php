@@ -14,7 +14,7 @@
 						<div class="wrap-login-item ">						
 							<div class="login-form form-item form-stl">
 								{{-- <x-auth-validation-errors class="mb-4" :errors="$errors" /> --}}
-
+								{{-- <x-jet-validation-errors class="mb-4"/> --}}
 								<form name="frm-login" method="POST" action="{{route('login')}}">
 									@csrf
 									<fieldset class="wrap-title">
