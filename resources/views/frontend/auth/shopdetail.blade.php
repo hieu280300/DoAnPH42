@@ -194,7 +194,7 @@
 									<div class="size_heart">
 										<a href=""><img src="images/Product-Details-arrow.png" alt="" /></a>
 									</div> --}}
-									<form action="{{ route('addCart',$product->id,$size->id,$color->id) }}" method="post">
+									<form action="{{ route('addCart',$product->id) }}" method="post">
 										@csrf
 										<div class="color_size_detail">
 											<select name="product_size" id="product-size">

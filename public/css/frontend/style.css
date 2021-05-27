@@ -2866,7 +2866,7 @@ padding: 15px 20px;
 }
 .cart_heading .h_item1 {
   float: left;
-  width: 20%;
+  width: 30%;
 }
 .cart_heading .h_item2 {
   float: left;
@@ -2892,10 +2892,6 @@ width: 10%;
   float: left;
 width: 10%;
 }
-.cart_heading .h_item8 {
-  float: left;
- width: 10%;
-}
 .h_item1 > p, .h_item2 > p, .h_item3 > p, .h_item4 > p, .h_item5 > p, .h_item6 >p, .h_item7 >p, .h_item8 > p {
   color: #232323;
   font-size: 13px;
@@ -2909,7 +2905,7 @@ padding: 32px 0;
 }
 .cart_item .cart_item_img {
   float: left;
-width: 20%;
+width: 30%;
 }
 .cart_item .cart_price {
   float: left;
@@ -2931,10 +2927,6 @@ width: 10%;
   float: left;
 width: 10%;
 }
-.cart_item .cart_update{
-  float:left;
-  width: 10%;
-}
 .cart_item .cart_delete{
   float:left;
   width: 10%;
@@ -2950,7 +2942,7 @@ width: 10%;
   margin-top: 23px;
   text-transform: uppercase;
 }
-.cart_price > p, .cart_quantity > p, .cart_total > p, .cart_size > p, .cart_color > p, .cart_update > p, .cart_delete > p{
+.cart_price > p, .cart_quantity > p, .cart_total > p, .cart_size > p, .cart_color  > p, .cart_delete > p{
   color: #333333;
   font-size: 12px;
   margin-bottom: 0;

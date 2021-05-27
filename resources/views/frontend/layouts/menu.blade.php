@@ -76,9 +76,9 @@
             </nav>
         </div>
         <div class="nav_right floatright">
-            <a href="{{route('showCart')}}"><img src="/images/frontend/bag.png" alt="Bag" />cart: 2 items</a>
-            <div class="cart_menu">
-                <div class="cart_items">
+            <a href="{{route('showCart')}}"><img src="/images/frontend/bag.png" alt="Bag" />Giỏ hàng: {{Cart::Count()}}</a>
+            {{-- <div class="cart_menu"> --}}
+                {{-- <div class="cart_items">
                     <div class="c_item_img floatleft">
                         <a href="product-detail.html"><img src="/images/frontend/c_item1.jpg" alt="" /></a>
                     </div>
@@ -121,8 +121,8 @@
                     <div class="c_totals_right floatleft">
                         <a href="">Check Out</a>
                     </div>
-                </div>
-            </div>
+                </div> --}}
+            {{-- </div> --}}
         </div>
     
     

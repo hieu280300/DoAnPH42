@@ -172,9 +172,6 @@
 								<p>total</p>
 							</div>
 							<div class="h_item7">
-								<p>Update</p>
-							</div>
-							<div class="h_item8">
 								<p>Delete</p>
 							</div>
 						</div>
@@ -210,7 +207,10 @@
 							<div class="cart_delete">
 								<a href="{{ route('deleteCart', $item->rowId) }}" class="text-danger"><input type="submit" value="Delete"  class="btn btn-danger"></a>
 							</div>
-						</div>
+							</div>
+						
+					
+						@endforeach
 						<div class="col-3">
 							<div class="cart-total">
 								<div class="prices">
@@ -225,8 +225,9 @@
 								</div>
 							</div>
 						</div>
-					</div>
-						@endforeach
+						<div class="checkout">
+							<a href="{{route('checkout')}}" class="text-danger"><input type="submit" value="Mua hàng"  class="btn btn-danger"></a>
+						</div>
                     </div>
 					</div>
 				

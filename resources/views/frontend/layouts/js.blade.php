@@ -35,6 +35,12 @@ function down(min) {
 
     </script>
     <script>
+      function updateCart(qty,rowId)
+      {
+       
+      }
+      </script>
+    <script>
 //       function addtocart(){ 
 // get 'sid' and 'parent' value from anchor tag using jquery
 
@@ -72,6 +78,7 @@ function down(min) {
       $('.add_to_cart').on('click', addtocard);
     });
     </script>
+  
 <script src="/js/frontend/owl.carousel.min.js"></script>
 <script src="/js/frontend/lightbox.min.js"></script>
 <script src="/js/frontend/jquery.elevatezoom.js"></script>

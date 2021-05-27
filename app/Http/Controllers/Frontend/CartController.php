@@ -17,20 +17,17 @@ class CartController extends Controller
         $size = $request->input('size');
         $color = $request->input('color');
         $product = Product::find($id);
-        $size = $size->find($id)->size;
-        $color = $color->find($id)->color;
         $pro_name = $product->name;
         $pro_image = $product->thumbnail;
-        $pro_size = $size;
-        $pro_color = $color;
+        // $size=$product->sizes->find($id)->size;
         $pro_new_price = $product->latestPrice()->price;
         $data = [
             'id' => $id,
             'qty' => $quantity,
             'name' => $pro_name,
             'price' => $pro_new_price,
-            'size' => $pro_size,
-            'color' => $pro_color,
+            'size' => $size,
+            'color' => $color,
             'weight' => '12',
             'options' => [
                 'image' => $pro_image,
@@ -38,7 +35,7 @@ class CartController extends Controller
         ];
          
         Cart::add($data);
-
+       
        
         return redirect()->back();
        
@@ -62,5 +59,9 @@ class CartController extends Controller
         Cart::update($rowId, $request->input('update_qty'));
 
         return redirect()->back();
+    }
+    public function checkout()
+    {
+        return view('frontend.auth.checkout');
     }
 }
