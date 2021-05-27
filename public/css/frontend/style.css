@@ -2845,6 +2845,15 @@ text-transform: uppercase;
 /* ============================================
 10. Cart Page CSS
 ===============================================*/
+
+/* .product {
+	width: 30%;
+	margin: 30px;
+} */
+.cart_quantity .input-group {
+  width:60%;
+
+}
 .main_cart_area {
   background: none repeat scroll 0 0 #f7f8f9;
 border-top: 1px solid #eeeeee;
@@ -2857,21 +2866,37 @@ padding: 15px 20px;
 }
 .cart_heading .h_item1 {
   float: left;
-width: 41%;
+  width: 20%;
 }
 .cart_heading .h_item2 {
   float: left;
-width: 18%;
+  width: 15%;
 }
 .cart_heading .h_item3 {
   float: left;
-width: 24%;
+  width: 15%;
 }
 .cart_heading .h_item4 {
   float: left;
-width: 17%;
+  width: 10%;
 }
-.h_item1 > p, .h_item2 > p, .h_item3 > p, .h_item4 > p {
+.cart_heading .h_item5 {
+  float: left;
+  width: 10%;
+}
+.cart_heading .h_item6 {
+  float: left;
+width: 10%;
+}
+.cart_heading .h_item7 {
+  float: left;
+width: 10%;
+}
+.cart_heading .h_item8 {
+  float: left;
+ width: 10%;
+}
+.h_item1 > p, .h_item2 > p, .h_item3 > p, .h_item4 > p, .h_item5 > p, .h_item6 >p, .h_item7 >p, .h_item8 > p {
   color: #232323;
   font-size: 13px;
   margin-bottom: 0;
@@ -2884,19 +2909,35 @@ padding: 32px 0;
 }
 .cart_item .cart_item_img {
   float: left;
-width: 41%;
+width: 20%;
 }
 .cart_item .cart_price {
   float: left;
-width: 18%;
+width: 15%;
 }
 .cart_item .cart_quantity {
   float: left;
-width: 24%;
+width: 15%;
 }
 .cart_item .cart_total {
   float: left;
-width: 17%;
+width: 10%;
+}
+.cart_item .cart_size {
+  float: left;
+width: 10%;
+}
+.cart_item .cart_color {
+  float: left;
+width: 10%;
+}
+.cart_item .cart_update{
+  float:left;
+  width: 10%;
+}
+.cart_item .cart_delete{
+  float:left;
+  width: 10%;
 }
 .cart_item_img > img {
   float: left;
@@ -2909,11 +2950,11 @@ width: 17%;
   margin-top: 23px;
   text-transform: uppercase;
 }
-.cart_price > p, .cart_quantity > p, .cart_total > p {
+.cart_price > p, .cart_quantity > p, .cart_total > p, .cart_size > p, .cart_color > p, .cart_update > p, .cart_delete > p{
   color: #333333;
   font-size: 12px;
   margin-bottom: 0;
-  margin-top: 31px;
+  margin-top: 30px;
   text-transform: uppercase;
 }
 .cart_quantity ul {

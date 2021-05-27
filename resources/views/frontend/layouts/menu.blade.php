@@ -44,15 +44,10 @@
         <div class="nav_center">
             <nav class="mainmenu">
                 <ul id="nav">
-                    <li class="current-page-item"><a href="index.html">Home</a>
-                        <ul id="sub-menu4">
-                            <li><a href="index-2.html">Home Version Two</a></li>
-                        </ul>
+                    {{-- <li class="current-page-item"><a href="{{route('home')}}">Home</a> --}}
                     </li>
-                    <li><a href="category-2.html">shop</a>
-                        <ul id="sub-menu7">
-                            <li><a href="product-detail.html">Product Detail Page</a></li>
-                        </ul>
+                    <li><a href="{{route('shop')}}">Home</a>
+                      
                     </li>
                     <li><a href="category-1.html">accessories</a>
                         <ul id="sub-menu">
@@ -81,7 +76,7 @@
             </nav>
         </div>
         <div class="nav_right floatright">
-            <a href="cart.html"><img src="/images/frontend/bag.png" alt="Bag" />cart: 2 items</a>
+            <a href="{{route('showCart')}}"><img src="/images/frontend/bag.png" alt="Bag" />cart: 2 items</a>
             <div class="cart_menu">
                 <div class="cart_items">
                     <div class="c_item_img floatleft">
@@ -121,10 +116,10 @@
                 </div>
                 <div class="cart_view_bottom">
                     <div class="c_totals_left floatleft">
-                        <a href="cart.html">View Cart</a>
+                        <a href="{{route('showCart')}}">View Cart</a>
                     </div>
                     <div class="c_totals_right floatleft">
-                        <a href="checkout.html">Check Out</a>
+                        <a href="">Check Out</a>
                     </div>
                 </div>
             </div>

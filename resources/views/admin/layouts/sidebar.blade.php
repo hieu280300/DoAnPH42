@@ -82,31 +82,31 @@
           {{-- menu of post module --}}
           @php
             $routePostArr = [
-              'admin.post.index',
-              'admin.post.create',
-              'admin.post.edit',
-              'admin.post.show',
+              'admin.product.index',
+              'admin.product.create',
+              'admin.product.edit',
+              'admin.product.show',
             ];
           @endphp
           <li class="nav-item {{ in_array(Route::currentRouteName(), $routePostArr) ? 'menu-open' : '' }}">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
-                Post
+                Product
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ route('admin.post.index') }}" class="nav-link {{ Route::currentRouteName() == 'admin.post.index' ? 'active' : '' }}">
+                <a href="{{ route('admin.product.index') }}" class="nav-link {{ Route::currentRouteName() == 'admin.product.index' ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>List Post</p>
+                  <p>List Product</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('admin.post.create') }}" class="nav-link {{ Route::currentRouteName() == 'admin.post.create' ? 'active' : '' }}">
+                <a href="{{ route('admin.product.create') }}" class="nav-link {{ Route::currentRouteName() == 'admin.product.create' ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Create Post</p>
+                  <p>Create Product</p>
                 </a>
               </li>
             </ul>

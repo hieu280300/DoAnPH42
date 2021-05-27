@@ -15,9 +15,11 @@ class CategorySeeder extends Seeder
     {
         $date = date('Y-m-d H:i:s');
         $data = [
-            ['name' => 'SHIRTS', 'created_at' => $date, 'updated_at' => $date],
-            ['name' => 'T SHIRTS', 'created_at' => $date, 'updated_at' => $date],
-            ['name' => 'TROUSER FIT', 'created_at' => $date, 'updated_at' => $date]
+            ['name' => 'Tshirt', 'created_at' => $date, 'updated_at' => $date],
+            ['name' => 'Jacket', 'created_at' => $date, 'updated_at' => $date],
+            ['name' => 'Sweater', 'created_at' => $date, 'updated_at' => $date],
+            ['name' => 'Pants', 'created_at' => $date, 'updated_at' => $date],
+            ['name' => 'Short', 'created_at' => $date, 'updated_at' => $date],
         ];
 
         DB::table('categories')->insert($data);

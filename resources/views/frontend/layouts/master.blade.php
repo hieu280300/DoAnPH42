@@ -12,10 +12,15 @@
 
 <body>
     {{-- header --}}
+    
     @include('frontend.layouts.header')
+
+  
+
     {{--navigation--}}
     {{-- @include('frontend.layouts.navigation_custom') --}}
     {{-- menu --}}
+    
     @include('frontend.layouts.menu')
 
     {{-- content --}}

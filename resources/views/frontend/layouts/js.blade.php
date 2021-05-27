@@ -1,5 +1,8 @@
-<script src="https://code.jquery.com/jquery.min.js"></script>
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
   $(function() {
     $( "#slider-range" ).slider({
@@ -14,8 +17,61 @@
     $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
       " - $" + $( "#slider-range" ).slider( "values", 1 ) );
   });
-  </script>
   
+  </script>
+  <script>
+    function up(max) {
+    document.getElementById("myNumber").value = parseInt(document.getElementById("myNumber").value) + 1;
+    if (document.getElementById("myNumber").value >= parseInt(max)) {
+        document.getElementById("myNumber").value = max;
+    }
+}
+function down(min) {
+    document.getElementById("myNumber").value = parseInt(document.getElementById("myNumber").value) - 1;
+    if (document.getElementById("myNumber").value <= parseInt(min)) {
+        document.getElementById("myNumber").value = min;
+    }
+}
+
+    </script>
+    <script>
+//       function addtocart(){ 
+// get 'sid' and 'parent' value from anchor tag using jquery
+
+// $.ajax({
+
+//     type: 'POST',
+
+//     url: '/cart/add.php',
+
+//     data:{  'sid':sid, 'parent':parent  }
+
+// success : function(data) {  alert('success'); }
+// }); 
+//  }
+    function addtocard(event)
+    {
+      event.preventDefault();
+      let urlCart =$(this).data('url');
+      alert(urlCart);
+      // alert(urlCart);
+      // $.ajax({
+      //   type: "GET",
+      //   url: urlCart,
+      //   dataType: 'json',
+      //   success: function (data)
+      //   {
+         
+      //   }
+      //     error: function(){
+            
+      //     }
+      //   });
+     }
+    $(function(){
+      $('.add_to_cart').on('click', addtocard);
+    });
+    </script>
 <script src="/js/frontend/owl.carousel.min.js"></script>
 <script src="/js/frontend/lightbox.min.js"></script>
 <script src="/js/frontend/jquery.elevatezoom.js"></script>

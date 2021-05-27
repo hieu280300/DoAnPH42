@@ -7,7 +7,7 @@
     <h1>Create Post</h1>
     @include('errors.error')
     <br>
-    <form action="{{ route('admin.post.store') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('admin.product.store') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="form-group mb-5">
             <label for="">Post Name</label>
@@ -49,7 +49,7 @@
             @enderror
         </div>
         <div class="form-group">
-            <a href="{{ route('admin.post.index') }}" class="btn btn-secondary">List Post</a>
+            <a href="{{ route('admin.product.index') }}" class="btn btn-secondary">List Post</a>
             <button class="btn btn-primary" type="submit">create</button>
         </div>
     </form>

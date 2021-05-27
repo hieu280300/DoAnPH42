@@ -1,5 +1,5 @@
 <div class="mb-5 mt-5 border p-3">
-    <form action="{{ route('admin.post.index') }}" method="GET">
+    <form action="{{ route('admin.product.index') }}" method="GET">
         <div class="mb-3">
             <label class="form-label">Post Name</label>
             <input type="text" class="form-control" name="name" placeholder="post name" value="{{ request()->get('name') }}">

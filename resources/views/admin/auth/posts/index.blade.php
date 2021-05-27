@@ -6,7 +6,7 @@
 @section('title', 'List Post')
 @section('content')
 @include('admin.auth.posts.search')
-<p><a href="{{ route('admin.post.create') }}">Create</a></p>
+<p><a href="{{ route('admin.product.create') }}">Create</a></p>
         
         {{-- show message --}}
         @if (Session::has('success'))
@@ -23,31 +23,31 @@
         <thead class="thead-dark">
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">post Name</th>
-                <th scope="col">post content</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Price </th>
                 <th scope="col">Category Name</th>
                 <th scope="col">Thumbnail</th>
                 <th scope="col" colspan="3">Action</th>
             </tr>
         </thead class="thead-light">
         <tbody>
-            @if (!empty($posts))
-                @foreach ($posts as $key => $post)
+            @if (!empty($products))
+                @foreach ($products as $key => $product)
                     <tr>
                         <td scope="col">{{ $key+1 }}</td>
-                        <td scope="col">{{ $post->name }}</td>
-                        {{-- <td scope="col">{{ $post->$->content }}</td> --}}
-                        <td scope="col">{{ $post->category->name }}</td>
+                        <td scope="col">{{ $product->name }}</td>
+                        <td scope="col">{{ $product->latestPrice()->price}} VNĐ</td>
+                        <td scope="col">{{ $product->category->name }}</td>
                         <td>
-                            <img src="{{ asset($post->thumbnail) }}" alt="{{ $post->name }}" class="img-flid" style="width:100px">
+                            <img src="{{ asset($product->thumbnail) }}" alt="{{ $product->name }}" class="img-flid" style="width:100px">
                         </td>
                         {{-- <td scope="col">{{$posts->}}</td> --}}
 
                         <td>
-                            <a href="{{ route('admin.post.show', $post->id) }}"><input type="submit" name="submit" value="Detail" class="btn btn-danger"></a></td>
-                        <td scope="col"><a href="{{ route('admin.post.edit', $post->id) }}"><input type="submit" name="submit" value="Edit" class="btn btn-danger"></a> </td>
+                            <a href="{{ route('admin.product.show', $product->id) }}"><input type="submit" name="submit" value="Detail" class="btn btn-danger"></a></td>
+                        <td scope="col"><a href="{{ route('admin.product.edit', $product->id) }}"><input type="submit" name="submit" value="Edit" class="btn btn-danger"></a> </td>
                         <td>
-                            <form action="{{ route('admin.post.destroy', $post->id) }}" method="post">
+                            <form action="{{ route('admin.product.destroy', $product->id) }}" method="post">
                                 @method('delete')
                                 @csrf
                                 <input type="submit" name="submit" value="Delete" class="btn btn-danger">
@@ -58,5 +58,5 @@
             @endif
         </tbody>
     </table>
-{{$posts -> links()}}
+{{$products -> links()}}
 @endsection
