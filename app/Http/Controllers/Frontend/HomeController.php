@@ -74,11 +74,10 @@ class HomeController extends Controller
     }
     public function shop_detail($id)
     {
-      
         $data=[];
         $product=Product::find($id);
-        $size=Size::all();
-        $color=Color::all();
+        $size=Size::get();
+        $color=Color::get();
         $product_relateds=Product::where('category_id',$product->category_id)->get();
         $data['product']=$product;
         $data['sizes']=$size;

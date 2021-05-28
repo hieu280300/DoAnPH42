@@ -2892,7 +2892,7 @@ width: 10%;
   float: left;
 width: 10%;
 }
-.h_item1 > p, .h_item2 > p, .h_item3 > p, .h_item4 > p, .h_item5 > p, .h_item6 >p, .h_item7 >p, .h_item8 > p {
+.h_item1 > p, .h_item2 > p, .h_item3 > p, .h_item4 > p, .h_item5 > p, .h_item6 >p, .h_item7 > p {
   color: #232323;
   font-size: 13px;
   margin-bottom: 0;
@@ -2921,7 +2921,7 @@ width: 10%;
 }
 .cart_item .cart_size {
   float: left;
-width: 10%;
+  width: 10%;
 }
 .cart_item .cart_color {
   float: left;
@@ -2930,6 +2930,7 @@ width: 10%;
 .cart_item .cart_delete{
   float:left;
   width: 10%;
+  padding-top: 20px;
 }
 .cart_item_img > img {
   float: left;
@@ -2941,6 +2942,12 @@ width: 10%;
   margin-bottom: 0;
   margin-top: 23px;
   text-transform: uppercase;
+}
+.qty-input
+{
+  margin-top: 30px;
+  width: 60px;
+ 
 }
 .cart_price > p, .cart_quantity > p, .cart_total > p, .cart_size > p, .cart_color  > p, .cart_delete > p{
   color: #333333;
@@ -3312,15 +3319,15 @@ width: 38px;
 .color_detail {
   float: left;
   overflow: hidden;
-  width: 70%;
+  width: 80%;
 }
 .color_heading {
   float: left;
   overflow: hidden;
-  width: 30%;
+  width: 20%;
 }
 .single_color {
-  margin-bottom: 30px;
+margin-bottom: 30px;
 overflow: hidden;
 }
 
@@ -3328,7 +3335,7 @@ overflow: hidden;
   float: left;
   margin-right: 3%;
   overflow: hidden;
-  width: 23%;
+  width: 16%;
 }
 .size_cart > a {
   color: #232323;
@@ -3349,7 +3356,7 @@ margin-right: 4%;
 overflow: hidden;
 padding: 5px 20px;
 text-align: center;
-width: 32%;
+width: 30%;
 background: #fff;
 }
 .size_heart {
@@ -3360,7 +3367,7 @@ background: #fff;
   overflow: hidden;
   padding: 5px;
   text-align: center;
-  width: 12%;
+  width: 19%;
 }
 .size_heart:hover {
 background: none repeat scroll 0 0 #F7F8F9;

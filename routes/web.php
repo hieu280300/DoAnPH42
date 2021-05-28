@@ -28,9 +28,11 @@ Route::get('/Home/Shop_Detail/{id}', [App\Http\Controllers\Frontend\HomeControll
 // Route::get('/Home/Add_Cart/{id}', [App\Http\Controllers\Frontend\HomeController::class ,'add_cart'])->name('add_carts');
 // Route::get('/Home/Cart', [App\Http\Controllers\Frontend\HomeController::class ,'cart'])->name('carts');
 // Route::get('/Home/Update_Cart', [App\Http\Controllers\Frontend\CartController::class ,'update_card'])->name('update_Cart');
-Route::get('add-cart/{id}', [App\Http\Controllers\Frontend\CartController::class,'save_cart'])->name('addCart');
+Route::post('add-cart/{id}', [App\Http\Controllers\Frontend\CartController::class,'save_cart'])->name('addCart');
 Route::get('show-cart',[App\Http\Controllers\Frontend\CartController::class,'show_cart'])->name('showCart');
 Route::post('update{id}',[App\Http\Controllers\Frontend\CartController::class,'update_quantity'])->name('updateCart');
 Route::get('delete-cart/{rowId}', [App\Http\Controllers\Frontend\CartController::class,'delete_cart'])->name('deleteCart');
 Route::get('checkout',[App\Http\Controllers\Frontend\CartController::class,'checkout'])->name('checkout');
+Route::post('checkout-complete',[App\Http\Controllers\Frontend\CartController::class,'checkoutComplete'])->name('checkoutComplete');
+Route::get('complete',[App\Http\Controllers\Frontend\CartController::class,'complete'])->name('complete');
 require __DIR__ . '/auth.php';

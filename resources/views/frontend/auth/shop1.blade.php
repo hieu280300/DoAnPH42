@@ -33,38 +33,7 @@
         </div>
     </div>
 </div>
-<div class="filter_area">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-sm-8 col-xs-12">
-                <div class="filter_box_left">
-                    <p>FILTERING:</p>
-                    <div class="filter_cont">
-                        <ul>
-                            <li><a href="category-1.html">on</a></li>
-                            <li><img src="images/filter_ico.png" alt="" /></li>
-                            <li><a href="category-2.html">off</a></li>
-                        </ul>
-                    </div>
-                    <div class="s_results">
-                        <p><span>|</span> showing 1-12 of 30 results</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-4 col-xs-12">
-                <div class="filter_box_right">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">sort by newness <span class="caret"></span></a>
-                      <ul class="dropdown-menu">
-                        <li><a href="#">Top Seller </a></li>
-                        <li><a href="#">Most Popular</a></li>
-                        <li><a href="#">Alphabetically</a></li>                        
-                        <li><a href="#">Older First</a></li>                        
-                      </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+   
 <section class="main_category_area">
     <div class="container">
         <div class="row">
@@ -185,8 +154,6 @@
                         <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
                           <div class="panel-body">
                             @foreach ($sizes as $size)
-                                
-                         
                             <ul id="cat_size">
                                 <li><a href="">{{$size->size}}</a></li>
                                 
@@ -263,25 +230,10 @@
                         <div class="col-md-4 col-sm-6 col-xs-12">
                           
                             <div class="main_cat_item">
+                              <a href="{{route('shop_details',['id'=>$product->id])}}">
                                 <div class="item">
                                     <div class="item-img">
                                         <img src="{{$product->thumbnail}}" alt="{{$product->thumbnail}}" />
-                                      
-                                        <div class="tr-add-cart">
-                                            <ul>
-                                                {{-- <li><a class="fa fa-shopping-cart tr_cart" href="#"></a></li> --}}
-                                                <form action="{{ route('addCart',$product->id) }}" method="post">
-                                                  @csrf
-                                                  <input type="hidden" name="quantity" value="1">
-                                                  <br>
-                                                  <input type="hidden" name="pro_id">
-                                                  <button type="submit" class="btn btn-secondary" title="Add to cart">
-                                                    <i class="fa fa-shopping-cart"></i>
-                                                </button>
-                                              </form>
-                                             
-                                            </ul>
-                                        </div>
 
                                     </div>
                                     <div class="item-new">
@@ -289,7 +241,7 @@
                                         <span>-10%</span>
                                     </div>
                                     <div class="item-sub">
-                                        <a href="{{route('shop_details',['id'=>$product->id])}}" class="product-name" ><h5>{{$product->name}}</h5></a>
+                                        <a href="" class="product-name" ><h5>{{$product->name}}</h5></a>
                                         @if (!empty($product->latestPrice()->price))
                                         <span class="price">{{ number_format($product->latestPrice()->price) }} VNĐ</span>
                                          @endif
@@ -297,6 +249,7 @@
                                   
                                     </div>
                               </div>
+                            </a>
                             </div>
                      
                             </div>

@@ -195,10 +195,10 @@
 							</div>
 							
 							<div class="cart_size">
-								<p>{{$item->color}}</p>
+								<p>{{$item->options->product_size}}</p>
 							</div>
 							<div class="cart_color">
-								<p>{{$item->color}}</p>
+								<p>{{$item->options->product_color}}</p>
 							</div>
 							<div class="cart_total">
 								<p>{{number_format($item->price*$item->qty)}} VNĐ</p>

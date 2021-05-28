@@ -56,7 +56,8 @@
 }
 .step_thankyou {
     float: left;
-    background: white;
+    background: #357ebd;
+    /* border-left: 16px solid #357ebd; */
     padding: 7px 13px;
     border-radius: 1px;
     text-align: center;
@@ -331,119 +332,16 @@ hr{
                 <div class="row">
                     <div style="display: table; margin: auto;">
                         <span class="step step_complete"> <a href="#" class="check-bc">Cart</a> <span class="step_line step_complete"> </span> <span class="step_line backline"> </span> </span>
-                        <span class="step step_complete"> <a href="#" class="check-bc">Checkout</a> <span class="step_line "> </span> <span class="step_line step_complete"> </span> </span>
-                        <span class="step_thankyou check-bc step_complete">Thank you</span>
+                        <span class="step step_complete"> <a href="#" class="check-bc">Checkout</a> <span class="step_line step_complete"> </span> <span class="step_line backline"> </span> </span>
+                        <span class="step step_complete">  <a href="#" class="check-bc">Thank you</a> <span class="step_line step_complete "> </span> <span class="step_line backline"> </span></span>
                     </div>
                 </div>
                 <div class="row">
-                    <p></p>
+                    <p>Bạn đã đặt hàng thành công !!!</p>
                 </div>
                 </div>
             </div>    
-            <div class="row cart-body">
-                <form class="form-horizontal" method="post" action="{{route('checkoutComplete')}}">
-                  @csrf
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-push-6 col-sm-push-6">
-                    <!--REVIEW ORDER-->
-                    <div class="panel panel-info">
-                      <div class="panel-heading">Address</div>
-                      <div class="panel-body">
-                          <div class="form-group">
-                              <div class="col-md-12">
-                                  <h4>Shipping Address</h4>
-                              </div>
-                          </div>
-                          <div class="form-group">
-                              <div class="col-md-12">
-                                  <strong>Họ và tên:</strong></div>
-                                  <div class="col-md-12">
-                                  <input type="text" name="first_name" class="form-control" value="" />
-                                
-                              </div>
-                          </div>
-                          <div class="form-group">
-                              <div class="col-md-12"><strong>Địa chỉ:</strong></div>
-                              <div class="col-md-12">
-                                  <input type="text" name="address" class="form-control" value="" />
-                              </div>
-                          </div>
-                          <div class="form-group">
-                              <div class="col-md-12"><strong>Thành phố:</strong></div>
-                              <div class="col-md-12">
-                                  <input type="text" name="city" class="form-control" value="" />
-                              </div>
-                          </div> 
-                          <div class="form-group">
-                              <div class="col-md-12"><strong>Số điện thoại:</strong></div>
-                              <div class="col-md-12"><input type="text" name="phone_number" class="form-control" value="" /></div>
-                          </div>
-                          <div class="form-group">
-                              <div class="col-md-12"><strong>Email Address:</strong></div>
-                              <div class="col-md-12"><input type="text" name="email_address" class="form-control" value="" /></div>
-                          </div>
-                          <div class="form-group">
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                                <button type="submit" class="btn btn-primary btn-submit-fix">Đặt hàng</button>
-                            </div>
-                        </div>
-                      </div>
-                  </div>
-                    <!--REVIEW ORDER END-->
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-pull-6 col-sm-pull-6">
-                    <!--SHIPPING METHOD-->
-                    <div class="panel panel-info">
-                      <div class="panel-heading">
-                          Review Order <div class="pull-right"><small><a class="afix-1" href="#">Edit Cart</a></small></div>
-                      </div>
-                      <div class="panel-body">
-                        @foreach (Cart::content() as $item)
-                          <div class="form-group">
-                              <div class="col-sm-3 col-xs-3">
-                                  <img class="img-responsive" src="{{$item->options->image }}" />
-                              </div>
-                             
-                              <div class="col-sm-6 col-xs-6">
-                                  <div class="col-xs-12"><small>Tên sản phẩm: <span>{{$item->name}}</span></small></div>
-                                  <div class="col-xs-12"><small>Số lượng: <span>{{$item->qty}}</span></small></div>
-                                  <div class="col-xs-12"><small>Size: <span>{{$item->options->product_size}}</span></small></div>
-                                  <div class="col-xs-12"><small>Màu: <span>{{$item->options->product_color}}</span></small></div>
-
-                              </div>
-                            
-                              <div class="col-sm-3 col-xs-3 text-right">
-                                  <h6><h6>Gía: </h6>{{number_format($item->price)}} VNĐ</h6>
-                              </div>
-                          </div>
-                          @endforeach
-                          <div class="form-group"><hr /></div>
-                          <div class="form-group">
-                              <div class="col-xs-12">
-                                  <strong>Subtotal</strong>
-                                  <div class="pull-right"><span>$</span><span>200.00</span></div>
-                              </div>
-                              <div class="col-xs-12">
-                                  <small>Shipping</small>
-                                  <div class="pull-right"><span>-</span></div>
-                              </div>
-                          </div>
-                          <div class="form-group"><hr /></div>
-                          <div class="form-group">
-                              <div class="col-xs-12">
-                                  <strong>Tổng tiền</strong>
-                                  <div class="pull-right"><span>{{ Cart::subTotal()  }} VNĐ</span></div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                   
-                  
-                        </div>
-                    </div>
-                    <!--CREDIT CART PAYMENT END-->
-                </div>
-                
-                </form>
+          
             </div>
             <div class="row cart-footer">
         
