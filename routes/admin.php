@@ -2,8 +2,14 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ColorController;
+use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\SizeController;
+use App\Http\Controllers\Admin\UserController;
+use App\Models\Size;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,5 +44,46 @@ Route::group(['middleware' => ['check_login_admin'] , 'as' => 'admin.'], functio
         Route::get('/edit/{id}', [ProductController::class, 'edit'])->name('edit');
         Route::put('/update/{id}', [ProductController::class, 'update'])->name('update');
         Route::delete('/delete/{id}', [ProductController::class, 'destroy'])->name('destroy');
+    });
+    Route::group(['prefix' => 'user', 'as' => 'user.'], function () {
+        Route::get('/list', [UserController::class, 'index'])->name('index');
+        Route::get('/create', [UserController::class, 'create'])->name('create');
+        Route::post('/store', [UserController::class, 'store'])->name('store');
+        Route::get('/show/{id}', [UserController::class, 'show'])->name('show');
+        Route::get('/edit/{id}', [UserController::class, 'edit'])->name('edit');
+        Route::put('/update/{id}', [UserController::class, 'update'])->name('update');
+        Route::delete('/delete/{id}', [UserController::class, 'destroy'])->name('destroy');
+    });
+    Route::group(['prefix' => 'customer', 'as' => 'customer.'], function () {
+        Route::get('/list', [CustomerController::class, 'index'])->name('index');
+        Route::get('/create', [CustomerController::class, 'create'])->name('create');
+        Route::get('/show/{id}', [CustomerController::class, 'show'])->name('show');
+        Route::get('/edit/{id}', [CustomerController::class, 'edit'])->name('edit');
+        Route::put('/update/{id}', [CustomerController::class, 'update'])->name('update');
+        Route::delete('/delete/{id}', [CustomerController::class, 'destroy'])->name('destroy');
+    });
+    Route::group(['prefix' => 'order', 'as' => 'order.'], function () {
+        Route::get('/list', [OrderController::class, 'index'])->name('index');
+        
+        Route::get('/show/{id}', [OrderController::class, 'show'])->name('show');
+        Route::get('/edit/{id}', [OrderController::class, 'edit'])->name('edit');
+        Route::put('/update/{id}', [OrderController::class, 'update'])->name('update');
+        Route::delete('/delete/{id}', [OrderController::class, 'destroy'])->name('destroy');
+    });
+    Route::group(['prefix' => 'size', 'as' => 'size.'], function () {
+        Route::get('/list', [SizeController::class, 'index'])->name('index');
+        Route::get('/create', [SizeController::class, 'create'])->name('create');
+        Route::get('/show/{id}', [SizeController::class, 'show'])->name('show');
+        Route::get('/edit/{id}', [SizeController::class, 'edit'])->name('edit');
+        Route::put('/update/{id}', [SizeController::class, 'update'])->name('update');
+        Route::delete('/delete/{id}', [SizeController::class, 'destroy'])->name('destroy');
+    });
+    Route::group(['prefix' => 'color', 'as' => 'color.'], function () {
+        Route::get('/list', [ColorController::class, 'index'])->name('index');
+        Route::get('/create', [ColorController::class, 'create'])->name('create');
+        Route::get('/show/{id}', [ColorController::class, 'show'])->name('show');
+        Route::get('/edit/{id}', [ColorController::class, 'edit'])->name('edit');
+        Route::put('/update/{id}', [ColorController::class, 'update'])->name('update');
+        Route::delete('/delete/{id}', [ColorController::class, 'destroy'])->name('destroy');
     });
 });

@@ -12,20 +12,13 @@
 
     {{-- create category link --}}
     {{-- case 1 --}}
-    <p><a href="{{ route('admin.category.create') }}">Create</a></p>
+    <p><a href="{{ route('admin.category.create') }} " class="btn btn-secondary">Create</a></p>
     
     {{-- case 2 --}}
     {{-- <p><a href="/category/create">Create</a></p> --}}
 
     {{-- show message --}}
-    @if(Session::has('success'))
-        <p class="text-success">{{ Session::get('success') }}</p>
-    @endif
-
-    {{-- show error message --}}
-    @if(Session::has('error'))
-        <p class="text-danger">{{ Session::get('error') }}</p>
-    @endif
+   
 
     {{-- display list category table --}}
     <table id="category-list" class="table table-bordered table-hover table-striped">
@@ -42,8 +35,8 @@
                     <tr>
                         <td>{{ $key+1 }}</td>
                         <td>{{ $category->name }}</td>
-                        <td><a href="{{ route('admin.category.show', $category->id) }}"><input type="submit" name="submit" value="Detail" class="btn btn-danger"></a></td>
-                        <td><a href="{{ route('admin.category.edit', $category->id) }}"><input type="submit" name="submit" value="Edit" class="btn btn-danger"></a></td>
+                        <td><a href="{{ route('admin.category.show', $category->id) }}"><input type="submit" name="submit" value="Detail" class="btn btn-info"></a></td>
+                        <td><a href="{{ route('admin.category.edit', $category->id) }}"><input type="submit" name="submit" value="Edit" class="btn btn-success"></a></td>
                         <td>
                             <form action="{{ route('admin.category.destroy', $category->id) }}" method="post">
                                 @csrf

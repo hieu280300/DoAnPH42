@@ -1,7 +1,6 @@
 	<link href='http://fonts.googleapis.com/css?family=Cabin:400,500,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 	
-	
 	<!-- Font awesome css -->
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
@@ -33,3 +32,4 @@
 	<!-- Favicons -->
 	<link rel="apple-touch-icon-precomposed" href="/images/frontend/apple-touch-icon-precomposed.png">
 	<link rel="shortcut icon" type="image/ico" href="/images/frontend/favicon.ico"/>
+	

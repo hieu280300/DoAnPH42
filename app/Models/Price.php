@@ -13,6 +13,9 @@ class Price extends Model
     protected $fillable = [
      'price',
      'product_id',
+     'begin_date',
+     'end_date',
+     'status',
     ];
     public function product()
     {

@@ -22,7 +22,7 @@ class CreatePricesTable extends Migration
             $table->boolean('status')->default(1)->comment('status: 1 - availabe, 0: unavailable');
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign('product_id')->references('id')->on('products');
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');;
         });
     }
 

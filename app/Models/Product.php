@@ -14,7 +14,9 @@ class Product extends Model
         'name',
         'description',
         'thumbnail',
+        'quantity',
         'category_id',
+        'status',
     ];
     public const PAGE_LIMIT = 10;
     public function category()
@@ -36,7 +38,7 @@ class Product extends Model
     }
     public function colors()
     {
-        return $this->hasMany(Color::class);
+        return $this->belongsToMany(Color::class, 'product_colors', 'product_id', 'product_color');
     }
     public function promotions()
     {
@@ -46,9 +48,8 @@ class Product extends Model
     {
         return $this->hasMany(Image::class);
     }
-    public function sizes()
-    {
-        return $this->belongstoMany(Size::class);
+    public function sizes() {
+        return $this->belongsToMany(Size::class, 'product_sizes', 'product_id', 'product_size');
     }
     public function latestPrice()
     {
@@ -58,6 +59,10 @@ class Product extends Model
             ->where('end_date', '>=', $currentdate)
             ->where('status',1)
             ->first();
+    }
+    public function order_detail()
+    {
+        return $this->belongsTo(OrderDetail::class,'product_id', 'id');
     }
 
 

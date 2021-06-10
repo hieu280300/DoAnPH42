@@ -26,9 +26,8 @@ class StoreProductRequest extends FormRequest
         return [
      
                 'name' => 'required|min:5|max:255', // rule: not null, minumum: 5, maximum: 255
-                'content' => 'required|min:10', // rule: not null, minumum: 10
+                'description' => 'required|min:10', // rule: not null, minumum: 10
                 'category_id' => 'required', // rule: not null
             ];
-        ];
     }
 }

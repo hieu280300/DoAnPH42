@@ -2556,7 +2556,6 @@ textarea.form-control {
 .is-invalid ~ .invalid-tooltip {
   display: block;
 }
-
 .was-validated .form-control:invalid, .form-control.is-invalid {
   border-color: #dc3545;
   padding-right: 2.25rem;

@@ -59,7 +59,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
-                Category
+                Manage Category
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
@@ -92,7 +92,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
-                Product
+                Manage Product
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
@@ -111,11 +111,101 @@
               </li>
             </ul>
           </li>
-        </ul>
-
+         
+        {{-- menu of user module --}}
+      
+      @php
+      $routeOrderArr = [
+        'admin.order.index',
+        'admin.order.create',
+        'admin.order.edit',
+        'admin.order.show',
+      ];
+    @endphp
+    <li class="nav-item {{ in_array(Route::currentRouteName(), $routeOrderArr) ? 'menu-open' : '' }}">
+      <a href="#" class="nav-link">
+        <i class="nav-icon fas fa-copy"></i>
+        <p>
+          Manage Order
+          <i class="fas fa-angle-left right"></i>
+        </p>
+      </a>
+      <ul class="nav nav-treeview">
+        <li class="nav-item">
+          <a href="{{ route('admin.order.index') }}" class="nav-link {{ Route::currentRouteName() == 'admin.order.index' ? 'active' : '' }}">
+            <i class="far fa-circle nav-icon"></i>
+            <p>List order</p>
+          </a>
+        </li>
+      </ul>
+    </li>
+    @php
+    $routeCustomerArr = [
+      'admin.customer.index',
+      'admin.customer.create',
+      'admin.customer.edit',
+      'admin.customer.show',
+    ];
+  @endphp
+  <li class="nav-item {{ in_array(Route::currentRouteName(), $routeCustomerArr) ? 'menu-open' : '' }}">
+    <a href="#" class="nav-link">
+      <i class="nav-icon fas fa-copy"></i>
+      <p>
+        Manage Customer
+        <i class="fas fa-angle-left right"></i>
+      </p>
+    </a>
+    <ul class="nav nav-treeview">
+      <li class="nav-item">
+        <a href="{{ route('admin.customer.index') }}" class="nav-link {{ Route::currentRouteName() == 'admin.customer.index' ? 'active' : '' }}">
+          <i class="far fa-circle nav-icon"></i>
+          <p>List Customer</p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="{{ route('admin.customer.create') }}" class="nav-link {{ Route::currentRouteName() == 'admin.customer.create' ? 'active' : '' }}">
+          <i class="far fa-circle nav-icon"></i>
+          <p>Create Customer</p>
+        </a>
+      </li>
+    </ul>
+  </li>
+    @php
+    $routeUserArr = [
+      'admin.user.index',
+      'admin.user.create',
+      'admin.user.edit',
+      'admin.user.show',
+    ];
+  @endphp
+  <li class="nav-item {{ in_array(Route::currentRouteName(), $routeUserArr) ? 'menu-open' : '' }}">
+    <a href="#" class="nav-link">
+      <i class="nav-icon fas fa-copy"></i>
+      <p>
+        Manage User
+        <i class="fas fa-angle-left right"></i>
+      </p>
+    </a>
+    <ul class="nav nav-treeview">
+      <li class="nav-item">
+        <a href="{{ route('admin.user.index') }}" class="nav-link {{ Route::currentRouteName() == 'admin.user.index' ? 'active' : '' }}">
+          <i class="far fa-circle nav-icon"></i>
+          <p>List User</p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="{{ route('admin.user.create') }}" class="nav-link {{ Route::currentRouteName() == 'admin.user.create' ? 'active' : '' }}">
+          <i class="far fa-circle nav-icon"></i>
+          <p>Create User</p>
+        </a>
+      </li>
+    </ul>
+  </li>
+  <br>
+  <br>
         <form action="{{ route('admin.logout') }}" method="POST">
           @csrf
-          <button type="submit" onclick="return confirm('Are you sure LOGOUT ?')">Logout</button>
+          <button type="submit" class="btn btn-light"onclick="return confirm('Are you sure LOGOUT ?')" style="margin:70px">Logout</button>
         </form>
       </nav>
       <!-- /.sidebar-menu -->

@@ -30,6 +30,6 @@ class SendMail extends Mailable
      */
     public function build()
     {
-        return $this->subject($this -> subject)->replyTo('lethithu280300@gmail.com','hiếu trần ')->view('frontend.auth.checkoutComplete');
+        return $this->subject($this -> subject)->replyTo('lethithu280300@gmail.com','hiếu trần ')->view('frontend.auth.checkout_complete');
     }
 }

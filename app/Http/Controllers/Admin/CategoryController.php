@@ -11,6 +11,10 @@ use Illuminate\Support\Facades\Log;
 
 class CategoryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('check_role_editor');
+    }
      /**
      * Display a listing of the resource.
      *
@@ -21,7 +25,7 @@ class CategoryController extends Controller
         // Method: GET
         $data = [];
         $categories = Category::get();
-        $categories = Category::paginate(3);
+        $categories = Category::paginate(10);
         
         $data['categories'] = $categories;
 //  dd($categories);

@@ -18,7 +18,7 @@ class AuthenticatedSessionController extends Controller
     public function create()
     {
 
-        return view('frontend.auth.login');
+        return view('frontend.home.login');
     }
 
     /**
@@ -33,7 +33,7 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
-
+        session()->flash('success', 'Bạn đã đăng nhập thành công');
         return redirect()->intended(RouteServiceProvider::HOME);
     }
 

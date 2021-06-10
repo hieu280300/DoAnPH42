@@ -21,10 +21,10 @@ class CreateOrderDetailsTable extends Migration
             $table->unsignedBigInteger('size_id');
             $table->integer('quantity');
 
-            $table->foreign('product_id')->references('id')->on('products');
-            $table->foreign('order_id')->references('id')->on('orders');
-            $table->foreign('price_id')->references('id')->on('prices');
-            $table->foreign('size_id')->references('id')->on('sizes');
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+            $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
+            $table->foreign('price_id')->references('id')->on('prices')->onDelete('cascade');
+            $table->foreign('size_id')->references('id')->on('sizes')->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
         });

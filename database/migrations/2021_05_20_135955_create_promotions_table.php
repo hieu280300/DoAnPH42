@@ -21,7 +21,7 @@ class CreatePromotionsTable extends Migration
             $table->dateTime('end_date');
             $table->boolean('status')->default(1);
             $table->timestamps();
-            $table->foreign('product_id')->references('id')->on('products');
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');;
             $table->softDeletes();
         });
     }

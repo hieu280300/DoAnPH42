@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration
             $table->string('thumbnail')->nullable();;
             $table->bigInteger('category_id')->unsigned()->nullable();
             $table->softDeletes();
-            $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');;
             $table->timestamps();
         });
     }
